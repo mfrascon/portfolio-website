@@ -1,4 +1,4 @@
-import Profile from '../../assets/couple-pic.jpg'
+import Profile from '../../assets/portrait.jpg'
 import { Link } from 'react-router';
 import { RiArrowRightLine } from "react-icons/ri";
 import './home.css';
@@ -10,11 +10,11 @@ const Home = () => {
 
       <div className='home-content'>
         <h1 className='home-title'>
-          <span>My Name Is Manuel Rascon</span> <br /> Jr. Full-Stack Web Developer
+          <span>Manuel Rascon</span> <br /> Full-Stack Web Developer
         </h1>
 
         <p className='home-description'>
-          Hi, I'm a Full-Stack Web Developer passionate about building modern, user-friendly websites. After completing an intensive full-stack web development bootcamp, I have been applying what I learned by creating personal projects that showcase my skills across both front-end and back-end technologies. Each project is an opportunity to grow, experiment, and build something awesome — all while gaining hands-on experience in real-world development.
+          Hi, I'm a Full-Stack Web Developer passionate about building modern, user-friendly websites. After completing an intensive full-stack web development bootcamp, I have been applying what I learned by creating personal projects that showcase my skills across both front-end and back-end technologies. Each project is an opportunity to grow, experiment, and build something awesome!
         </p>
 
         <Link to='/about' className='button'>

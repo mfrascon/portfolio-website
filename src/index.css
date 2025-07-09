@@ -88,6 +88,11 @@ img {
     font-weight: var(--weight-700);
     position: relative;
     overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.button:hover {
+    color: var(--white-color);
 }
 
 .button::before {
@@ -104,6 +109,19 @@ img {
 .button:hover::before {
     transform: translateX(0);
 }
+
+.button-icon {
+    position: absolute;
+    inset: -1px -1px -1px auto;
+    background-color: var(--first-color);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    color: var(--white-color);
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+}
+
 /*=============== LAYOUT ===============*/
 .grid {
     display: grid;
