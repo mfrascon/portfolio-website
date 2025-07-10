@@ -1,4 +1,18 @@
 import { FaHome, FaUser, FaFolderOpen, FaEnvelopeOpen } from 'react-icons/fa';
+import skillsImg1 from './assets/css-logo.svg';
+import skillsImg2 from './assets/html-logo.svg';
+import skillsImg3 from './assets/javascript-logo.svg';
+import skillsImg4 from './assets/next-js-logo.svg';
+import skillsImg5 from './assets/react-logo.svg';
+import skillsImg6 from './assets/tailwindcss-logo.svg';
+import skillsImg7 from './assets/typescript-logo.svg';
+import skillsImg8 from './assets/vite-logo.svg';
+import skillsImg9 from './assets/wix-logo.svg';
+import skillsImg10 from './assets/supabase-logo.png';
+import projectImg1 from './assets/project-1.png';
+import projectImg2 from './assets/project-2.png';
+import projectImg3 from './assets/project-3.png';
+import projectImg4 from './assets/project-4.png';
 
 export const links = [
     {
@@ -23,5 +37,47 @@ export const links = [
         name: 'Contact',
         icon: <FaEnvelopeOpen className='nav-icon' />,
         path: '/contact',
+    },
+]
+
+export const portfolio = [
+    {
+        id: 1,
+        img: projectImg1,
+        title: 'Nerdys Tech Repair',
+        description: 
+            'A bilingual, responsive website for a local mobile PC repair business. Built using Vite, Bootstrap, JavaScript, HTML, and CSS, the site features a dynamic contact form powered by Web3Forms, language toggle functionality, and mobile-friendly design. Services, modals, and multimedia carousels are integrated to highlight offerings and recent YouTube content.',
+        skills: [skillsImg1, skillsImg2, skillsImg3, skillsImg8],
+        link: 'https://nerdystechrepair.com/',
+    },
+
+    {
+        id: 2,
+        img: projectImg2,
+        title: 'Gordo Sells',
+        description: 
+            'GordoSells is a full-stack web application designed to sell secondhand items in a local, community-focused marketplace. Built with Next.js, TypeScript, and TailwindCSS, the site pulls product data directly from Stripe, simplifying inventory and payment management. Users can send inquiries via a custom email form, powered by Resend. The project includes responsive design, a streamlined checkout experience, and email notifications to facilitate communication between buyer and seller',
+        skills: [skillsImg4, skillsImg7, skillsImg5, skillsImg6],
+        link: 'https://www.gordosells.com/',
+    },
+
+    {
+        id: 3,
+        img: projectImg3,
+        title: 'MC Landscaping',
+        description: 
+            'Redesigned a local landscaping companys website on the Wix platform to create a more modern, user-friendly, and visually appealing experience. Focused on improving layout, mobile responsiveness, and clear navigation to highlight services and encourage customer inquiries. Collaborated with the client to update content, integrate contact forms, and enhance overall branding.',
+        skills: [skillsImg9],
+        link: 'https://www.mclandscapeanddesign.com/',
+    },
+
+    {
+        id: 4,
+        img: projectImg4,
+        title: 'Center For Education News',
+        description: 
+            'I developed an education news web app using Wix and Velo (Wix Developer Tools), integrating it with a Supabase backend built by another intern. The site fetched and displayed education-related news articles, showing summaries and metadata for each. I implemented dynamic content loading, basic keyword filtering, and organized the front-end structure using Wix custom coding features. The project aimed to provide accessible news content while laying the groundwork for future data-driven features like trend visualizations and topic-based filtering.',
+        skills: [skillsImg9, skillsImg10],
+        link: 'https://www.centerforeducationnews.org/',
     },
 ]
