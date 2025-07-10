@@ -1,8 +1,8 @@
 import { RiUserLine, RiGithubLine, RiLinkedinLine, RiMailSendLine } from 'react-icons/ri';
 import { HiOutlineMail } from 'react-icons/hi';
-import './contact.css';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import './contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -59,7 +59,7 @@ const Contact = () => {
       </h2>
 
       <div className='contact-container container grid'>
-        <div className='contact-content gird'>
+        <div className='contact-content grid'>
 
           <div className='contact-card'>
             <span className='contact-icon'>

@@ -1,6 +1,12 @@
+import { MdNightsStay } from "react-icons/md";
+
 const Themes = () => {
   return (
-    <div>Themes</div>
+    <div className='style-switcher'>
+      <div className='switcher-toggler'>
+        <MdNightsStay />
+      </div>
+    </div>
   )
 }
 
