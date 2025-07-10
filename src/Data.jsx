@@ -1,4 +1,5 @@
 import { FaHome, FaUser, FaFolderOpen, FaEnvelopeOpen } from 'react-icons/fa';
+
 import skillsImg1 from './assets/css-logo.svg';
 import skillsImg2 from './assets/html-logo.svg';
 import skillsImg3 from './assets/javascript-logo.svg';
@@ -9,6 +10,7 @@ import skillsImg7 from './assets/typescript-logo.svg';
 import skillsImg8 from './assets/vite-logo.svg';
 import skillsImg9 from './assets/wix-logo.svg';
 import skillsImg10 from './assets/supabase-logo.png';
+
 import projectImg1 from './assets/project-1.png';
 import projectImg2 from './assets/project-2.png';
 import projectImg3 from './assets/project-3.png';
@@ -54,7 +56,7 @@ export const portfolio = [
     {
         id: 2,
         img: projectImg2,
-        title: 'Gordo Sells',
+        title: 'Gordo Sells(E-commerce)',
         description: 
             'GordoSells is a full-stack web application designed to sell secondhand items in a local, community-focused marketplace. Built with Next.js, TypeScript, and TailwindCSS, the site pulls product data directly from Stripe, simplifying inventory and payment management. Users can send inquiries via a custom email form, powered by Resend. The project includes responsive design, a streamlined checkout experience, and email notifications to facilitate communication between buyer and seller',
         skills: [skillsImg4, skillsImg7, skillsImg5, skillsImg6],
