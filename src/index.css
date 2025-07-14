@@ -156,16 +156,21 @@ img {
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1208px) {
     .nav-menu {
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%;
         background-color: var(--container-color);
         width: 100%;
         height: 100%;
         padding: 5rem 0 0 3rem;
         z-index: 1000;
+        transition: right 0.3s ease;
+    }
+
+    .show-menu {
+        right: 0;
     }
 
     .nav-list {
@@ -193,10 +198,94 @@ img {
     .nav-link:hover {
         background-color: initial;
     }
+
+    .nav-icon,
+    .nav-name {
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover :is(.nav-icon, .nav-name),
+    .active-nav :is(.nav-icon, .nav-name) {
+        color: var(--first-color);
+    }
+
+    .nav-close,
+    .nav-toggle {
+        display: inline-flex;
+        color: var(--title-color);
+        cursor: pointer;
+        position: absolute;
+    }
+
+    .nav-close {
+        top: 1.25rem;
+        right: 1.5rem;
+        font-size: 1.75rem;
+    }
+
+    .nav-toggle {
+        top: 1rem;
+        right: -0.75rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 0.25rem;
+        background-color: var(--container-color);
+        display: grid;
+        place-items: center;
+        font-size: 1.5rem;
+    }
+
+    .home-container {
+        grid-template-columns: 5fr 7fr;
+        padding: 1.5rem;
+    }
 }
 
 /* For Medium Devices */
-@media screen and (max-width: 1040px) {}
+@media screen and (max-width: 1024px) {
+    .home-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home-container,
+    .section {
+        padding-block: 3rem;
+    }
+
+    .color-block {
+        display: none;
+    }
+
+    .home-img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        margin-top: auto;
+    }
+
+    .home-img,
+    .home-description {
+        margin-inline: auto;
+    }
+
+    .home-content {
+        text-align: center;
+        margin-bottom: auto;
+    }
+    
+    .home-title {
+        padding-left: 0;
+    }
+
+    .home-title::before {
+        all: unset;
+    }
+
+    .section-title {
+        margin-bottom: 3rem;
+    }
+
+}
 
 @media screen and (max-width: 768px) {}
 
