@@ -1,4 +1,5 @@
 // import Info from '../../components/Info';
+import './about.css';
 
 const About = () => {
   return (
@@ -15,6 +16,30 @@ const About = () => {
             <ul className="info-list grid">
               {/* <Info /> */}
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <div className='separator'></div>
+
+      <section className='skills'>
+        <h3 className='section-subtitle subtitle-center'>Skills</h3>
+
+        <div className='skills-container grid'>
+          <div className='skills-group'>
+            <h3 className='skills-title'>Frontend Developer</h3>
+
+            <div className='skills-items grid'>
+
+            </div>
+          </div>
+
+          <div className='skills-group'>
+            <h3 className='skills-title'>Backend Developer</h3>
+
+            <div className='skills-items grid'>
+              
+            </div>
           </div>
         </div>
       </section>
