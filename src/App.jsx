@@ -1,5 +1,5 @@
 import Home from "./pages/home/Home"
-import About from "./pages/about/About"
+// import About from "./pages/about/About"
 import Contact from "./pages/contact/Contact"
 import Portfolio from "./pages/portfolio/Portfolio"
 import { createBrowserRouter, RouterProvider } from "react-router"
@@ -15,10 +15,10 @@ const App = () => {
           path: '/', 
           element: <Home />,
         },
-        {
-          path: '/about', 
-          element: <About />,
-        },
+        // {
+        //   path: '/about', 
+        //   element: <About />,
+        // },
         {
           path: '/portfolio', 
           element: <Portfolio />,

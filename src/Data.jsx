@@ -10,11 +10,19 @@ import skillsImg7 from './assets/typescript-logo.svg';
 import skillsImg8 from './assets/vite-logo.svg';
 import skillsImg9 from './assets/wix-logo.svg';
 import skillsImg10 from './assets/supabase-logo.png';
+import skillsImg11 from './assets/api-logo.svg';
+import skillsImg12 from './assets/express-js-logo.svg';
+import skillsImg13 from './assets/git-logo.svg';
+import skillsImg14 from './assets/postgresql-logo.svg';
+import skillsImg15 from './assets/terminal-logo.svg';
+import skillsImg16 from './assets/seo-icon.svg';
+import skillsImg17 from './assets/google-analytics-logo.svg';
 
 import projectImg1 from './assets/project-1.png';
 import projectImg2 from './assets/project-2.png';
 import projectImg3 from './assets/project-3.png';
 import projectImg4 from './assets/project-4.png';
+import projectImg5 from './assets/project-5.png';
 
 export const links = [
     {
@@ -23,11 +31,11 @@ export const links = [
         path: '/',
     },
 
-    {
-        name: 'About',
-        icon: <FaUser className='nav-icon' />,
-        path: '/about',
-    },
+    // {
+    //     name: 'About',
+    //     icon: <FaUser className='nav-icon' />,
+    //     path: '/about',
+    // },
 
     {
         name: 'Portfolio',
@@ -40,7 +48,7 @@ export const links = [
         icon: <FaEnvelopeOpen className='nav-icon' />,
         path: '/contact',
     },
-]
+];
 
 export const portfolio = [
     {
@@ -69,7 +77,7 @@ export const portfolio = [
         title: 'MC Landscaping',
         description: 
             'Redesigned a local landscaping companys website on the Wix platform to create a more modern, user-friendly, and visually appealing experience. Focused on improving layout, mobile responsiveness, and clear navigation to highlight services and encourage customer inquiries. Collaborated with the client to update content, integrate contact forms, and enhance overall branding.',
-        skills: [skillsImg9],
+        skills: [skillsImg9, skillsImg16],
         link: 'https://www.mclandscapeanddesign.com/',
     },
 
@@ -82,4 +90,97 @@ export const portfolio = [
         skills: [skillsImg9, skillsImg10],
         link: 'https://www.centerforeducationnews.org/',
     },
-]
+
+    {
+        id: 5,
+        img: projectImg5,
+        title: 'Verdani Institute For The Built Environment',
+        description: 
+            'I was hired to improve the SEO for this Wix website. I used tools like Screaming Frog to audit the sites structure and Google PageSpeed Insights to optimize performance. I updated meta titles and descriptions, improved header hierarchy, and increased page load speed. I also connected Google Analytics and added a gated download feature that required users to sign up before accessing reports, allowing the client to track downloads and generate custom analytics reports.',
+        skills: [skillsImg9, skillsImg16, skillsImg17],
+        link: 'https://www.verdani-institute.org/',
+    },
+];
+
+export const skills = [
+    {
+        id: 1, 
+        img: skillsImg2,
+        title: 'HTML',
+        level: 'Intermediate',
+        category: 'developer',
+    },
+
+    {
+        id: 2, 
+        img: skillsImg1,
+        title: 'CSS',
+        level: 'Intermediate',
+        category: 'developer',
+    },
+
+    {
+        id: 3, 
+        img: skillsImg3,
+        title: 'JavaScript',
+        level: 'Intermediate',
+        category: 'developer',
+    },
+
+    {
+        id: 4, 
+        img: skillsImg5,
+        title: 'React',
+        level: 'Intermediate',
+        category: 'developer',
+    },
+
+    {
+        id: 5, 
+        img: skillsImg14,
+        title: 'PostgreSQL',
+        level: 'Intermediate',
+        category: 'backend',
+    },
+
+    {
+        id: 6, 
+        img: skillsImg12,
+        title: 'Express.js',
+        level: 'Intermediate',
+        category: 'backend',
+    },
+
+    {
+        id: 7, 
+        img: skillsImg10,
+        title: 'SupaBase',
+        level: 'Intermediate',
+        category: 'backend',
+    },
+
+    {
+        id: 8, 
+        img: skillsImg11,
+        title: 'APIs',
+        level: 'Intermediate',
+        category: 'backend',
+    },
+
+    {
+        id: 9, 
+        img: skillsImg13,
+        title: 'Git',
+        level: 'Intermediate',
+        category: 'developer',
+    },
+
+    {
+        id: 10, 
+        img: skillsImg15,
+        title: 'Terminal',
+        level: 'Intermediate',
+        category: 'developer',
+    },
+
+];
