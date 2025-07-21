@@ -14,7 +14,7 @@ const Home = () => {
         </h1>
 
         <p className='home-description'>
-          Hi, I'm a Full-Stack Web Developer passionate about building modern, user-friendly websites. After completing an intensive full-stack web development bootcamp, I have been applying what I learned by creating personal projects that showcase my skills across both front-end and back-end technologies. Each project is an opportunity to grow, experiment, and build something awesome!
+          Hi, I'm passionate about building websites people can actually find and use. After years of helping others navigate complex healthcare systems, I realized I wanted to solve problems in a deeper, more scalable way — through technology. That drive led me to complete an intensive full-stack web development bootcamp. Since then, I’ve been applying what I’ve learned to real-world projects — not just building modern, user-friendly websites, but also making sure they are optimized for visibility with solid SEO. Every project is a chance to grow, experiment, and create something meaningful.
         </p>
 
         <Link to='/portfolio' className='button'>

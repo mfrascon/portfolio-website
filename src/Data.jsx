@@ -23,6 +23,7 @@ import projectImg2 from './assets/project-2.png';
 import projectImg3 from './assets/project-3.png';
 import projectImg4 from './assets/project-4.png';
 import projectImg5 from './assets/project-5.png';
+import projectImg6 from './assets/project-6.png';
 
 export const links = [
     {
@@ -84,6 +85,16 @@ export const portfolio = [
 
     {
         id: 4,
+        img: projectImg6,
+        title: 'Sharks Portfolio',
+        description: 
+            'Implemented on-page SEO best practices including semantic HTML, optimized meta tags, responsive design, and performance improvements to increase visibility and accessibility across search engines.',
+        skills: [skillsImg16],
+        link: 'https://sharklao.myportfolio.com/',
+    },
+
+    {
+        id: 5,
         img: projectImg2,
         title: 'Gordo Sells(E-commerce)',
         description: 
@@ -93,7 +104,7 @@ export const portfolio = [
     },
 
     {
-        id: 5,
+        id: 6,
         img: projectImg3,
         title: 'MC Landscaping',
         description: 
