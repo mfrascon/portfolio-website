@@ -43,46 +43,27 @@ export const links = [
         path: '/portfolio',
     },
 
-    {
-        name: 'Contact',
-        icon: <FaEnvelopeOpen className='nav-icon' />,
-        path: '/contact',
-    },
+    // {
+    //     name: 'Contact',
+    //     icon: <FaEnvelopeOpen className='nav-icon' />,
+    //     path: '/contact',
+    // },
 ];
 
 export const portfolio = [
+    
     {
         id: 1,
-        img: projectImg1,
-        title: 'Nerdys Tech Repair',
+        img: projectImg5,
+        title: 'Verdani Institute For The Built Environment',
         description: 
-            'A bilingual, responsive website for a local mobile PC repair business. Built using Vite, Bootstrap, JavaScript, HTML, and CSS, the site features a dynamic contact form powered by Web3Forms, language toggle functionality, and mobile-friendly design. Services, modals, and multimedia carousels are integrated to highlight offerings and recent YouTube content.',
-        skills: [skillsImg1, skillsImg2, skillsImg3, skillsImg8],
-        link: 'https://nerdystechrepair.com/',
+            'I was hired to improve the SEO for this Wix website. I used tools like Screaming Frog to audit the sites structure and Google PageSpeed Insights to optimize performance. I updated meta titles and descriptions, improved header hierarchy, and increased page load speed. I also connected Google Analytics and added a gated download feature that required users to sign up before accessing reports, allowing the client to track downloads and generate custom analytics reports.',
+        skills: [skillsImg9, skillsImg16, skillsImg17],
+        link: 'https://www.verdani-institute.org/',
     },
 
     {
         id: 2,
-        img: projectImg2,
-        title: 'Gordo Sells(E-commerce)',
-        description: 
-            'GordoSells is a full-stack web application designed to sell secondhand items in a local, community-focused marketplace. Built with Next.js, TypeScript, and TailwindCSS, the site pulls product data directly from Stripe, simplifying inventory and payment management. Users can send inquiries via a custom email form, powered by Resend. The project includes responsive design, a streamlined checkout experience, and email notifications to facilitate communication between buyer and seller',
-        skills: [skillsImg4, skillsImg7, skillsImg5, skillsImg6],
-        link: 'https://www.gordosells.com/',
-    },
-
-    {
-        id: 3,
-        img: projectImg3,
-        title: 'MC Landscaping',
-        description: 
-            'Redesigned a local landscaping companys website on the Wix platform to create a more modern, user-friendly, and visually appealing experience. Focused on improving layout, mobile responsiveness, and clear navigation to highlight services and encourage customer inquiries. Collaborated with the client to update content, integrate contact forms, and enhance overall branding.',
-        skills: [skillsImg9, skillsImg16],
-        link: 'https://www.mclandscapeanddesign.com/',
-    },
-
-    {
-        id: 4,
         img: projectImg4,
         title: 'Center For Education News',
         description: 
@@ -92,13 +73,33 @@ export const portfolio = [
     },
 
     {
-        id: 5,
-        img: projectImg5,
-        title: 'Verdani Institute For The Built Environment',
+        id: 3,
+        img: projectImg1,
+        title: 'Nerdys Tech Repair',
         description: 
-            'I was hired to improve the SEO for this Wix website. I used tools like Screaming Frog to audit the sites structure and Google PageSpeed Insights to optimize performance. I updated meta titles and descriptions, improved header hierarchy, and increased page load speed. I also connected Google Analytics and added a gated download feature that required users to sign up before accessing reports, allowing the client to track downloads and generate custom analytics reports.',
-        skills: [skillsImg9, skillsImg16, skillsImg17],
-        link: 'https://www.verdani-institute.org/',
+            'A bilingual, responsive website for a local mobile PC repair business. Built using Vite, Bootstrap, JavaScript, HTML, and CSS, the site features a dynamic contact form powered by Web3Forms, language toggle functionality, and mobile-friendly design. Services, modals, and multimedia carousels are integrated to highlight offerings and recent YouTube content.',
+        skills: [skillsImg1, skillsImg2, skillsImg3, skillsImg8],
+        link: 'https://nerdystechrepair.com/',
+    },
+
+    {
+        id: 4,
+        img: projectImg2,
+        title: 'Gordo Sells(E-commerce)',
+        description: 
+            'GordoSells is a full-stack web application designed to sell secondhand items in a local, community-focused marketplace. Built with Next.js, TypeScript, and TailwindCSS, the site pulls product data directly from Stripe, simplifying inventory and payment management. Users can send inquiries via a custom email form, powered by Resend. The project includes responsive design, a streamlined checkout experience, and email notifications to facilitate communication between buyer and seller',
+        skills: [skillsImg4, skillsImg7, skillsImg5, skillsImg6],
+        link: 'https://www.gordosells.com/',
+    },
+
+    {
+        id: 5,
+        img: projectImg3,
+        title: 'MC Landscaping',
+        description: 
+            'Redesigned a local landscaping companys website on the Wix platform to create a more modern, user-friendly, and visually appealing experience. Focused on improving layout, mobile responsiveness, and clear navigation to highlight services and encourage customer inquiries. Collaborated with the client to update content, integrate contact forms, and enhance overall branding.',
+        skills: [skillsImg9, skillsImg16],
+        link: 'https://www.mclandscapeanddesign.com/',
     },
 ];
 
