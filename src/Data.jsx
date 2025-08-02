@@ -44,11 +44,11 @@ export const links = [
         path: '/portfolio',
     },
 
-    // {
-    //     name: 'Contact',
-    //     icon: <FaEnvelopeOpen className='nav-icon' />,
-    //     path: '/contact',
-    // },
+    {
+        name: 'Contact',
+        icon: <FaEnvelopeOpen className='nav-icon' />,
+        path: '/contact',
+    },
 ];
 
 export const portfolio = [

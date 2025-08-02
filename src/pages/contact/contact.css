@@ -1,4 +1,4 @@
-/* .contact-container {
+.contact-container {
     grid-template-columns: 5fr 7fr;
     align-items: flex-start;
     gap: 3rem 1.5rem;
@@ -101,4 +101,4 @@
 
 .color-first {
     color: var(--first-color);
-} */
+}
