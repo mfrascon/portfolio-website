@@ -32,10 +32,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        'service_a5owi9k', 
+        'service_o08v97t', 
         'template_90xfjio', 
         formData,
-        'P-9m-zJLMirt9rtH5'
+        'aQHKCKcVeauWgK605'
       )
       .then(
         () => {
