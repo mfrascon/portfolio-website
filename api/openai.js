@@ -1,72 +1,49 @@
+import rateLimit from 'express-rate-limit';
 import { handleOpenAIRewrite } from './controllers/openaiController.js';
 
-// Simple in-memory rate limiting for serverless
-// NOTE: This resets whenever the function instance restarts
-const requests = new Map();
-const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
-const MAX_REQUESTS = 5;
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
-function rateLimit(ip) {
-  const now = Date.now();
-  const data = requests.get(ip) || { count: 0, startTime: now };
-
-  if (now - data.startTime > WINDOW_MS) {
-    // Reset window
-    data.count = 1;
-    data.startTime = now;
-  } else {
-    data.count += 1;
-  }
-
-  requests.set(ip, data);
-
-  if (data.count > MAX_REQUESTS) {
-    const retryAfter = Math.ceil((WINDOW_MS - (now - data.startTime)) / 1000);
-    const error = new Error('Too many requests. Please try again later.');
-    error.status = 429;
-    error.retryAfter = retryAfter;
-    throw error;
-  }
-}
+const runMiddleware = (req, res, fn) =>
+  new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) return reject(result);
+      resolve(result);
+    });
+  });
 
 export default async function handler(req, res) {
-  // ----------------------
-  // 1️⃣ CORS Headers
-  // ----------------------
-  res.setHeader('Access-Control-Allow-Origin', 'https://mannyras.com'); // your frontend
+  /* 🔥 SET CORS HEADERS MANUALLY — REQUIRED FOR VERCEL */
+  res.setHeader('Access-Control-Allow-Origin', 'https://mannyras.com');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Max-Age', '86400');
 
-  // Handle preflight OPTIONS requests
+  // ✅ Preflight must return immediately
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
-  // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // ----------------------
-  // 2️⃣ Rate limiting
-  // ----------------------
   try {
-    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-    rateLimit(ip);
-  } catch (err) {
-    return res
-      .status(err.status || 429)
-      .setHeader('Retry-After', err.retryAfter || 60)
-      .json({ error: err.message });
-  }
-
-  // ----------------------
-  // 3️⃣ Call OpenAI controller
-  // ----------------------
-  try {
-    await handleOpenAIRewrite(req, res);
+    await runMiddleware(req, res, limiter);
+    return await handleOpenAIRewrite(req, res);
   } catch (error) {
     console.error('API Error:', error);
+
+    if (error?.status === 429) {
+      return res.status(429).json({
+        error: 'Too many requests. Please try again later.',
+      });
+    }
+
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 }

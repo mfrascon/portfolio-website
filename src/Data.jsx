@@ -112,6 +112,16 @@ export const portfolio = [
         skills: [skillsImg9, skillsImg16],
         link: 'https://www.mclandscapeanddesign.com/',
     },
+
+    //     {
+    //     id: 7,
+    //     img: projectImg6,
+    //     title: 'Sharks Portfolio',
+    //     description: 
+    //         'Implemented on-page SEO best practices including semantic HTML, optimized meta tags, responsive design, and performance improvements to increase visibility and accessibility across search engines.',
+    //     skills: [skillsImg16],
+    //     link: 'https://sharklao.myportfolio.com/',
+    // },
 ];
 
 export const skills = [
