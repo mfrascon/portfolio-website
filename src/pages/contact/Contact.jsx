@@ -79,7 +79,15 @@ const callOpenAI = async () => {
       body: JSON.stringify({ message: formData.message })
     });
 
-    const data = await res.json();
+    console.log('Calling:', `${import.meta.env.VITE_BACKEND_URL}/api/openai/rewrite`);
+
+    let data;
+    try {
+      data = await res.json();
+    } catch (err) {
+      throw new Error('Failed to parse JSON response');
+    }
+
 
     if (res.ok && data.rewrittenMessage) {
       setFormData({ ...formData, message: data.rewrittenMessage });

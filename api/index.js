@@ -5,7 +5,10 @@ import bodyParser from 'body-parser';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://mannyras.com',
+  credentials: true // if using cookies
+}));
 app.use(bodyParser.json());
 
 // API routes
