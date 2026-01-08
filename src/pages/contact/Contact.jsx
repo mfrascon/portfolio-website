@@ -11,6 +11,7 @@ import emailjs from '@emailjs/browser';
 import './contact.css';
 
 const Contact = () => {
+  console.log('VITE_BACKEND_URL:', import.meta.env.VITE_BACKEND_URL);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
