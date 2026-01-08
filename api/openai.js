@@ -10,7 +10,7 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
-// Promisify middleware
+// Promisify middleware (needed for Vercel)
 const runMiddleware = (req, res, fn) =>
   new Promise((resolve, reject) => {
     fn(req, res, (result) => {
@@ -27,23 +27,35 @@ const corsMiddleware = cors({
 });
 
 export default async function handler(req, res) {
-  // ✅ Handle CORS FIRST
-  await runMiddleware(req, res, corsMiddleware);
-
-  // ✅ Handle preflight
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
-  }
-
   try {
+    // ✅ ALWAYS apply CORS first
+    await runMiddleware(req, res, corsMiddleware);
+
+    // ✅ Handle preflight requests immediately
+    if (req.method === 'OPTIONS') {
+      return res.status(200).end();
+    }
+
+    // ✅ Only allow POST
+    if (req.method !== 'POST') {
+      return res.status(405).json({ error: 'Method Not Allowed' });
+    }
+
+    // ✅ Apply rate limiting
     await runMiddleware(req, res, limiter);
-    await handleOpenAIRewrite(req, res);
+
+    // ✅ Call OpenAI controller
+    return await handleOpenAIRewrite(req, res);
   } catch (error) {
     console.error('API Error:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+
+    // Handle rate-limit errors cleanly
+    if (error?.status === 429) {
+      return res.status(429).json({
+        error: 'Too many requests. Please try again later.',
+      });
+    }
+
+    return res.status(500).json({ error: 'Internal Server Error' });
   }
 }
