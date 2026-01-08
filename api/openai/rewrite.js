@@ -1,5 +1,5 @@
 import rateLimit from 'express-rate-limit';
-import { handleOpenAIRewrite } from './controllers/openaiController.js';
+import { handleOpenAIRewrite } from '../controllers/openaiController.js';
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -18,7 +18,7 @@ const runMiddleware = (req, res, fn) =>
 
 export default async function handler(req, res) {
   /* 🔥 SET CORS HEADERS MANUALLY — REQUIRED FOR VERCEL */
-  res.setHeader('Access-Control-Allow-Origin', 'https://mannyras.com');
+  res.setHeader('Access-Control-Allow-Origin', 'https://www.mannyras.com');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Access-Control-Max-Age', '86400');
